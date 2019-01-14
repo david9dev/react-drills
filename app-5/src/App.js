@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Image from "./Componets/Image"
 import './App.css';
 
 class App extends Component {
+  constructor()
+  {
+    super();
+    this.state = {
+      src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/barn-owl-1528898132.jpg?crop=0.861xw:0.820xh;0,0.0803xh&resize=480:*",
+      alt: "Owl",
+    }
+  }
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Image source={this.state.src} alternate={this.state.alt}/>
       </div>
     );
   }
